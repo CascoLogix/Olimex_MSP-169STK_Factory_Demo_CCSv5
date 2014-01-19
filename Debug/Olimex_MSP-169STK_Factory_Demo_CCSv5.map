@@ -1,0 +1,627 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.5                      
+******************************************************************************
+>> Linked Sat Jan 18 19:07:00 2014
+
+OUTPUT FILE NAME:   <Olimex_MSP-169STK_Factory_Demo_CCSv5.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001766
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000800  0000008e  00000772  RWIX
+  INFOB                 00001000   00000080  00000000  00000080  RWIX
+  INFOA                 00001080   00000080  00000000  00000080  RWIX
+  FLASH                 00001100   0000eee0  000007a3  0000e73d  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000000  00000002  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    00001100    00000000     UNINITIALIZED
+
+.bss       0    00000200    0000003e     UNINITIALIZED
+                  00000200    0000003e     main.obj (.bss)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.stack     0    000009b0    00000050     UNINITIALIZED
+                  000009b0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000009b2    0000004e     --HOLE--
+
+.text      0    00001100    000006fa     
+                  00001100    00000316     main.obj (.text:main)
+                  00001416    0000007a     main.obj (.text:Programm_Bytes)
+                  00001490    00000060     main.obj (.text:Erase_Flash)
+                  000014f0    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
+                  0000154e    00000058     main.obj (.text:Read_Bytes)
+                  000015a6    0000004a     main.obj (.text:usart0_rx)
+                  000015f0    0000003e     main.obj (.text:InitLCD)
+                  0000162e    0000003e     main.obj (.text:SEND_CHAR)
+                  0000166c    0000003e     main.obj (.text:SEND_CMD)
+                  000016aa    00000038     main.obj (.text:InitUSART0)
+                  000016e2    0000002c     rts430_eabi.lib : lsl16.obj (.text)
+                  0000170e    0000001e     main.obj (.text:ADC_ini)
+                  0000172c    0000001e     main.obj (.text:Get_ADC)
+                  0000174a    0000001c     main.obj (.text:Inactive_Flash)
+                  00001766    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  00001780    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  00001794    00000012     main.obj (.text:Read_Data)
+                  000017a6    00000012     main.obj (.text:Write_Data)
+                  000017b8    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  000017c8    0000000e     main.obj (.text:DAC_ini)
+                  000017d6    0000000e     main.obj (.text:UART_transmit)
+                  000017e4    0000000e     main.obj (.text:_E)
+                  000017f2    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
+                  000017f6    00000004                     : exit.obj (.text:abort)
+
+.const     0    000017fa    0000009f     
+                  000017fa    00000021     main.obj (.const:.string:LCD_Message)
+                  0000181b    00000001     --HOLE-- [fill = 0]
+                  0000181c    00000011     main.obj (.const:.string:DALLAS_PRESENT_Message)
+                  0000182d    00000001     --HOLE-- [fill = 0]
+                  0000182e    00000011     main.obj (.const:.string:DYSPLAY_RS232_Message)
+                  0000183f    00000001     --HOLE-- [fill = 0]
+                  00001840    00000011     main.obj (.const:.string:ERASE_ERR_Message)
+                  00001851    00000001     --HOLE-- [fill = 0]
+                  00001852    00000011     main.obj (.const:.string:ERASE_SUCCESS_Message)
+                  00001863    00000001     --HOLE-- [fill = 0]
+                  00001864    00000011     main.obj (.const:.string:PGM_ERROR_Message)
+                  00001875    00000001     --HOLE-- [fill = 0]
+                  00001876    00000011     main.obj (.const:.string:PGM_SUCCESS_Message)
+                  00001887    00000001     --HOLE-- [fill = 0]
+                  00001888    00000011     main.obj (.const:.string:SAVE_RS232_Message)
+
+.cinit     0    0000189a    0000000a     
+                  0000189a    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000189e    00000002     (__TI_handler_table)
+                  000018a0    00000004     (__TI_cinit_table)
+
+USART0RX   0    0000fff2    00000002     
+                  0000fff2    00000002     main.obj (.int09)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000018a0 records: 1, size/record: 4, table size: 4
+	.bss: load addr=0000189a, load size=00000004 bytes, run addr=00000200, run size=0000003e bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000189e records: 1, size/record: 2, table size: 2
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+000001a0   ADC12CTL0
+000001a2   ADC12CTL1
+000001a6   ADC12IE
+000001a4   ADC12IFG
+000001a8   ADC12IV
+00000080   ADC12MCTL0
+00000081   ADC12MCTL1
+0000008a   ADC12MCTL10
+0000008b   ADC12MCTL11
+0000008c   ADC12MCTL12
+0000008d   ADC12MCTL13
+0000008e   ADC12MCTL14
+0000008f   ADC12MCTL15
+00000082   ADC12MCTL2
+00000083   ADC12MCTL3
+00000084   ADC12MCTL4
+00000085   ADC12MCTL5
+00000086   ADC12MCTL6
+00000087   ADC12MCTL7
+00000088   ADC12MCTL8
+00000089   ADC12MCTL9
+00000140   ADC12MEM0
+00000142   ADC12MEM1
+00000154   ADC12MEM10
+00000156   ADC12MEM11
+00000158   ADC12MEM12
+0000015a   ADC12MEM13
+0000015c   ADC12MEM14
+0000015e   ADC12MEM15
+00000144   ADC12MEM2
+00000146   ADC12MEM3
+00000148   ADC12MEM4
+0000014a   ADC12MEM5
+0000014c   ADC12MEM6
+0000014e   ADC12MEM7
+00000150   ADC12MEM8
+00000152   ADC12MEM9
+0000170e   ADC_ini
+00000057   BCSCTL1
+00000058   BCSCTL2
+000017f6   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+000001c0   DAC12_0CTL
+000001c8   DAC12_0DAT
+000001c2   DAC12_1CTL
+000001ca   DAC12_1DAT
+000017c8   DAC_ini
+0000181c   DALLAS_PRESENT_Message
+00000056   DCOCTL
+000001e0   DMA0CTL
+000001e4   DMA0DA
+000001e2   DMA0SA
+000001e6   DMA0SZ
+000001e8   DMA1CTL
+000001ec   DMA1DA
+000001ea   DMA1SA
+000001ee   DMA1SZ
+000001f0   DMA2CTL
+000001f4   DMA2DA
+000001f2   DMA2SA
+000001f6   DMA2SZ
+00000122   DMACTL0
+00000124   DMACTL1
+0000182e   DYSPLAY_RS232_Message
+00001840   ERASE_ERR_Message
+00001852   ERASE_SUCCESS_Message
+00001490   Erase_Flash
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000172c   Get_ADC
+00000072   I2CDCTL
+00000076   I2CDRB
+00000076   I2CDRW
+00000050   I2CIE
+00000051   I2CIFG
+0000011c   I2CIV
+00000052   I2CNDAT
+00000118   I2COA
+00000073   I2CPSC
+0000011a   I2CSA
+00000074   I2CSCLH
+00000075   I2CSCLL
+00000071   I2CTCTL
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000174a   Inactive_Flash
+000015f0   InitLCD
+000016aa   InitUSART0
+000017fa   LCD_Message
+00000134   MAC
+00000136   MACS
+00000004   ME1
+00000005   ME2
+00000130   MPY
+00000132   MPYS
+00000138   OP2
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002e   P2SEL
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+0000001b   P3SEL
+0000001e   P4DIR
+0000001c   P4IN
+0000001d   P4OUT
+0000001f   P4SEL
+00000032   P5DIR
+00000030   P5IN
+00000031   P5OUT
+00000033   P5SEL
+00000036   P6DIR
+00000034   P6IN
+00000035   P6OUT
+00000037   P6SEL
+00001864   PGM_ERROR_Message
+00001876   PGM_SUCCESS_Message
+00001416   Programm_Bytes
+00000224   READ_BUF
+0000013c   RESHI
+0000013a   RESLO
+0000154e   Read_Bytes
+00001794   Read_Data
+00001888   SAVE_RS232_Message
+0000162e   SEND_CHAR
+0000166c   SEND_CMD
+0000013e   SUMEXT
+00000055   SVSCTL
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000198   TBCCR3
+0000019a   TBCCR4
+0000019c   TBCCR5
+0000019e   TBCCR6
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000188   TBCCTL3
+0000018a   TBCCTL4
+0000018c   TBCCTL5
+0000018e   TBCCTL6
+00000180   TBCTL
+0000011e   TBIV
+00000190   TBR
+00000074   U0BR0
+00000075   U0BR1
+00000070   U0CTL
+00000073   U0MCTL
+00000072   U0RCTL
+00000076   U0RXBUF
+00000071   U0TCTL
+00000077   U0TXBUF
+0000007c   U1BR0
+0000007d   U1BR1
+00000078   U1CTL
+0000007b   U1MCTL
+0000007a   U1RCTL
+0000007e   U1RXBUF
+00000079   U1TCTL
+0000007f   U1TXBUF
+000017d6   UART_transmit
+00000120   WDTCTL
+0000020a   WRITE_BUF
+000017a6   Write_Data
+000017e4   _E
+00000a00   __STACK_END
+00000050   __STACK_SIZE
+000018a0   __TI_CINIT_Base
+000018a4   __TI_CINIT_Limit
+0000189e   __TI_Handler_Table_Base
+000018a0   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00000001   __TI_args_main
+00000001   __TI_exit
+00001780   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+000017c4   __mspabi_func_epilog_1
+000017c2   __mspabi_func_epilog_2
+000017c0   __mspabi_func_epilog_3
+000017be   __mspabi_func_epilog_4
+000017bc   __mspabi_func_epilog_5
+000017ba   __mspabi_func_epilog_6
+000017b8   __mspabi_func_epilog_7
+000016e2   __mspabi_slli
+0000170a   __mspabi_slli_1
+000016f8   __mspabi_slli_10
+000016f6   __mspabi_slli_11
+000016f4   __mspabi_slli_12
+000016f2   __mspabi_slli_13
+000016f0   __mspabi_slli_14
+000016ee   __mspabi_slli_15
+00001708   __mspabi_slli_2
+00001706   __mspabi_slli_3
+00001704   __mspabi_slli_4
+00001702   __mspabi_slli_5
+00001700   __mspabi_slli_6
+000016fe   __mspabi_slli_7
+000016fc   __mspabi_slli_8
+000016fa   __mspabi_slli_9
+000014f0   _auto_init
+00001766   _c_int00
+00001766   _c_int00_noexit
+0000fffe   _reset_vector
+000009b0   _stack
+000017f2   _system_pre_init
+000017f6   abort
+00000205   b1_flag
+00000206   b2_flag
+00000207   b3_flag
+ffffffff   binit
+00000204   count
+00000208   dls_flag
+00000200   i
+00001100   main
+00000201   proba
+00000202   temp
+00000203   test
+000015a6   usart0_rx
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000004   ME1
+00000005   ME2
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+0000001c   P4IN
+0000001d   P4OUT
+0000001e   P4DIR
+0000001f   P4SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+00000030   P5IN
+00000031   P5OUT
+00000032   P5DIR
+00000033   P5SEL
+00000034   P6IN
+00000035   P6OUT
+00000036   P6DIR
+00000037   P6SEL
+00000050   I2CIE
+00000050   __STACK_SIZE
+00000051   I2CIFG
+00000052   I2CNDAT
+00000055   SVSCTL
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000070   U0CTL
+00000071   I2CTCTL
+00000071   U0TCTL
+00000072   I2CDCTL
+00000072   U0RCTL
+00000073   I2CPSC
+00000073   U0MCTL
+00000074   I2CSCLH
+00000074   U0BR0
+00000075   I2CSCLL
+00000075   U0BR1
+00000076   I2CDRB
+00000076   I2CDRW
+00000076   U0RXBUF
+00000077   U0TXBUF
+00000078   U1CTL
+00000079   U1TCTL
+0000007a   U1RCTL
+0000007b   U1MCTL
+0000007c   U1BR0
+0000007d   U1BR1
+0000007e   U1RXBUF
+0000007f   U1TXBUF
+00000080   ADC12MCTL0
+00000081   ADC12MCTL1
+00000082   ADC12MCTL2
+00000083   ADC12MCTL3
+00000084   ADC12MCTL4
+00000085   ADC12MCTL5
+00000086   ADC12MCTL6
+00000087   ADC12MCTL7
+00000088   ADC12MCTL8
+00000089   ADC12MCTL9
+0000008a   ADC12MCTL10
+0000008b   ADC12MCTL11
+0000008c   ADC12MCTL12
+0000008d   ADC12MCTL13
+0000008e   ADC12MCTL14
+0000008f   ADC12MCTL15
+00000118   I2COA
+0000011a   I2CSA
+0000011c   I2CIV
+0000011e   TBIV
+00000120   WDTCTL
+00000122   DMACTL0
+00000124   DMACTL1
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000130   MPY
+00000132   MPYS
+00000134   MAC
+00000136   MACS
+00000138   OP2
+0000013a   RESLO
+0000013c   RESHI
+0000013e   SUMEXT
+00000140   ADC12MEM0
+00000142   ADC12MEM1
+00000144   ADC12MEM2
+00000146   ADC12MEM3
+00000148   ADC12MEM4
+0000014a   ADC12MEM5
+0000014c   ADC12MEM6
+0000014e   ADC12MEM7
+00000150   ADC12MEM8
+00000152   ADC12MEM9
+00000154   ADC12MEM10
+00000156   ADC12MEM11
+00000158   ADC12MEM12
+0000015a   ADC12MEM13
+0000015c   ADC12MEM14
+0000015e   ADC12MEM15
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000180   TBCTL
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000188   TBCCTL3
+0000018a   TBCCTL4
+0000018c   TBCCTL5
+0000018e   TBCCTL6
+00000190   TBR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000198   TBCCR3
+0000019a   TBCCR4
+0000019c   TBCCR5
+0000019e   TBCCR6
+000001a0   ADC12CTL0
+000001a2   ADC12CTL1
+000001a4   ADC12IFG
+000001a6   ADC12IE
+000001a8   ADC12IV
+000001c0   DAC12_0CTL
+000001c2   DAC12_1CTL
+000001c8   DAC12_0DAT
+000001ca   DAC12_1DAT
+000001e0   DMA0CTL
+000001e2   DMA0SA
+000001e4   DMA0DA
+000001e6   DMA0SZ
+000001e8   DMA1CTL
+000001ea   DMA1SA
+000001ec   DMA1DA
+000001ee   DMA1SZ
+000001f0   DMA2CTL
+000001f2   DMA2SA
+000001f4   DMA2DA
+000001f6   DMA2SZ
+00000200   i
+00000201   proba
+00000202   temp
+00000203   test
+00000204   count
+00000205   b1_flag
+00000206   b2_flag
+00000207   b3_flag
+00000208   dls_flag
+0000020a   WRITE_BUF
+00000224   READ_BUF
+000009b0   _stack
+00000a00   __STACK_END
+00001100   main
+00001416   Programm_Bytes
+00001490   Erase_Flash
+000014f0   _auto_init
+0000154e   Read_Bytes
+000015a6   usart0_rx
+000015f0   InitLCD
+0000162e   SEND_CHAR
+0000166c   SEND_CMD
+000016aa   InitUSART0
+000016e2   __mspabi_slli
+000016ee   __mspabi_slli_15
+000016f0   __mspabi_slli_14
+000016f2   __mspabi_slli_13
+000016f4   __mspabi_slli_12
+000016f6   __mspabi_slli_11
+000016f8   __mspabi_slli_10
+000016fa   __mspabi_slli_9
+000016fc   __mspabi_slli_8
+000016fe   __mspabi_slli_7
+00001700   __mspabi_slli_6
+00001702   __mspabi_slli_5
+00001704   __mspabi_slli_4
+00001706   __mspabi_slli_3
+00001708   __mspabi_slli_2
+0000170a   __mspabi_slli_1
+0000170e   ADC_ini
+0000172c   Get_ADC
+0000174a   Inactive_Flash
+00001766   _c_int00
+00001766   _c_int00_noexit
+00001780   __TI_zero_init
+00001794   Read_Data
+000017a6   Write_Data
+000017b8   __mspabi_func_epilog_7
+000017ba   __mspabi_func_epilog_6
+000017bc   __mspabi_func_epilog_5
+000017be   __mspabi_func_epilog_4
+000017c0   __mspabi_func_epilog_3
+000017c2   __mspabi_func_epilog_2
+000017c4   __mspabi_func_epilog_1
+000017c8   DAC_ini
+000017d6   UART_transmit
+000017e4   _E
+000017f2   _system_pre_init
+000017f6   C$$EXIT
+000017f6   abort
+000017fa   LCD_Message
+0000181c   DALLAS_PRESENT_Message
+0000182e   DYSPLAY_RS232_Message
+00001840   ERASE_ERR_Message
+00001852   ERASE_SUCCESS_Message
+00001864   PGM_ERROR_Message
+00001876   PGM_SUCCESS_Message
+00001888   SAVE_RS232_Message
+0000189e   __TI_Handler_Table_Base
+000018a0   __TI_CINIT_Base
+000018a0   __TI_Handler_Table_Limit
+000018a4   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[246 symbols]
