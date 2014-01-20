@@ -115,7 +115,7 @@ all: Olimex_MSP-169STK_Factory_Demo_CCSv5.out
 Olimex_MSP-169STK_Factory_Demo_CCSv5.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/bin/cl430" -vmsp --abi=eabi -g --advice:power=all --define=__MSP430F169__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z --stack_size=80 -m"Olimex_MSP-169STK_Factory_Demo_CCSv5.map" --heap_size=80 --use_hw_mpy=16 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Olimex_MSP-169STK_Factory_Demo_CCSv5_linkInfo.xml" --rom_model -o "Olimex_MSP-169STK_Factory_Demo_CCSv5.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/bin/cl430" -vmsp --abi=eabi -Ooff -g --advice:power=all --define=__MSP430F169__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z --stack_size=80 -m"Olimex_MSP-169STK_Factory_Demo_CCSv5.map" --heap_size=80 --use_hw_mpy=16 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Olimex_MSP-169STK_Factory_Demo_CCSv5_linkInfo.xml" --rom_model -o "Olimex_MSP-169STK_Factory_Demo_CCSv5.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build

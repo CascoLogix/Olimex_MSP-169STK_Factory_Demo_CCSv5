@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.1.5                      
 ******************************************************************************
->> Linked Sat Jan 18 19:07:00 2014
+>> Linked Sun Jan 19 08:52:20 2014
 
 OUTPUT FILE NAME:   <Olimex_MSP-169STK_Factory_Demo_CCSv5.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00001766
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001924
 
 
 MEMORY CONFIGURATION
@@ -17,7 +17,7 @@ MEMORY CONFIGURATION
   RAM                   00000200   00000800  0000008e  00000772  RWIX
   INFOB                 00001000   00000080  00000000  00000080  RWIX
   INFOA                 00001080   00000080  00000000  00000080  RWIX
-  FLASH                 00001100   0000eee0  000007a3  0000e73d  RWIX
+  FLASH                 00001100   0000eee0  00000921  0000e5bf  RWIX
   INT00                 0000ffe0   00000002  00000000  00000002  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
   INT02                 0000ffe4   00000002  00000000  00000002  RWIX
@@ -54,53 +54,55 @@ section   page    origin      length       input sections
                   000009b0    00000002     rts430_eabi.lib : boot.obj (.stack)
                   000009b2    0000004e     --HOLE--
 
-.text      0    00001100    000006fa     
-                  00001100    00000316     main.obj (.text:main)
-                  00001416    0000007a     main.obj (.text:Programm_Bytes)
-                  00001490    00000060     main.obj (.text:Erase_Flash)
-                  000014f0    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
-                  0000154e    00000058     main.obj (.text:Read_Bytes)
-                  000015a6    0000004a     main.obj (.text:usart0_rx)
-                  000015f0    0000003e     main.obj (.text:InitLCD)
-                  0000162e    0000003e     main.obj (.text:SEND_CHAR)
-                  0000166c    0000003e     main.obj (.text:SEND_CMD)
-                  000016aa    00000038     main.obj (.text:InitUSART0)
-                  000016e2    0000002c     rts430_eabi.lib : lsl16.obj (.text)
-                  0000170e    0000001e     main.obj (.text:ADC_ini)
-                  0000172c    0000001e     main.obj (.text:Get_ADC)
-                  0000174a    0000001c     main.obj (.text:Inactive_Flash)
-                  00001766    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
-                  00001780    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
-                  00001794    00000012     main.obj (.text:Read_Data)
-                  000017a6    00000012     main.obj (.text:Write_Data)
-                  000017b8    00000010     rts430_eabi.lib : epilog.obj (.text)
-                  000017c8    0000000e     main.obj (.text:DAC_ini)
-                  000017d6    0000000e     main.obj (.text:UART_transmit)
-                  000017e4    0000000e     main.obj (.text:_E)
-                  000017f2    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
-                  000017f6    00000004                     : exit.obj (.text:abort)
+.text      0    00001100    00000878     
+                  00001100    00000344     main.obj (.text:main)
+                  00001444    000000aa     main.obj (.text:Programm_Bytes)
+                  000014ee    00000080     main.obj (.text:Read_Bytes)
+                  0000156e    00000076     main.obj (.text:InitLCD)
+                  000015e4    00000072     main.obj (.text:Erase_Flash)
+                  00001656    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
+                  000016b4    0000005a     main.obj (.text:SEND_CHAR)
+                  0000170e    0000005a     main.obj (.text:SEND_CMD)
+                  00001768    0000004a     main.obj (.text:usart0_rx)
+                  000017b2    00000038     main.obj (.text:InitUSART0)
+                  000017ea    0000002c     rts430_eabi.lib : lsl16.obj (.text)
+                  00001816    00000026     main.obj (.text:Get_ADC)
+                  0000183c    00000024     main.obj (.text:_E)
+                  00001860    00000022     main.obj (.text:Delayx100us)
+                  00001882    0000001e     main.obj (.text:ADC_ini)
+                  000018a0    0000001c     main.obj (.text:Inactive_Flash)
+                  000018bc    0000001a     main.obj (.text:Delay)
+                  000018d6    0000001a     main.obj (.text:Read_Data)
+                  000018f0    0000001a     main.obj (.text:UART_transmit)
+                  0000190a    0000001a     main.obj (.text:Write_Data)
+                  00001924    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000193e    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  00001952    00000010                     : epilog.obj (.text)
+                  00001962    0000000e     main.obj (.text:DAC_ini)
+                  00001970    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
+                  00001974    00000004                     : exit.obj (.text:abort)
 
-.const     0    000017fa    0000009f     
-                  000017fa    00000021     main.obj (.const:.string:LCD_Message)
-                  0000181b    00000001     --HOLE-- [fill = 0]
-                  0000181c    00000011     main.obj (.const:.string:DALLAS_PRESENT_Message)
-                  0000182d    00000001     --HOLE-- [fill = 0]
-                  0000182e    00000011     main.obj (.const:.string:DYSPLAY_RS232_Message)
-                  0000183f    00000001     --HOLE-- [fill = 0]
-                  00001840    00000011     main.obj (.const:.string:ERASE_ERR_Message)
-                  00001851    00000001     --HOLE-- [fill = 0]
-                  00001852    00000011     main.obj (.const:.string:ERASE_SUCCESS_Message)
-                  00001863    00000001     --HOLE-- [fill = 0]
-                  00001864    00000011     main.obj (.const:.string:PGM_ERROR_Message)
-                  00001875    00000001     --HOLE-- [fill = 0]
-                  00001876    00000011     main.obj (.const:.string:PGM_SUCCESS_Message)
-                  00001887    00000001     --HOLE-- [fill = 0]
-                  00001888    00000011     main.obj (.const:.string:SAVE_RS232_Message)
+.const     0    00001978    0000009f     
+                  00001978    00000021     main.obj (.const:.string:LCD_Message)
+                  00001999    00000001     --HOLE-- [fill = 0]
+                  0000199a    00000011     main.obj (.const:.string:DALLAS_PRESENT_Message)
+                  000019ab    00000001     --HOLE-- [fill = 0]
+                  000019ac    00000011     main.obj (.const:.string:DISPLAY_RS232_Message)
+                  000019bd    00000001     --HOLE-- [fill = 0]
+                  000019be    00000011     main.obj (.const:.string:ERASE_ERR_Message)
+                  000019cf    00000001     --HOLE-- [fill = 0]
+                  000019d0    00000011     main.obj (.const:.string:ERASE_SUCCESS_Message)
+                  000019e1    00000001     --HOLE-- [fill = 0]
+                  000019e2    00000011     main.obj (.const:.string:PGM_ERROR_Message)
+                  000019f3    00000001     --HOLE-- [fill = 0]
+                  000019f4    00000011     main.obj (.const:.string:PGM_SUCCESS_Message)
+                  00001a05    00000001     --HOLE-- [fill = 0]
+                  00001a06    00000011     main.obj (.const:.string:SAVE_RS232_Message)
 
-.cinit     0    0000189a    0000000a     
-                  0000189a    00000004     (.cinit..bss.load) [load image, compression = zero_init]
-                  0000189e    00000002     (__TI_handler_table)
-                  000018a0    00000004     (__TI_cinit_table)
+.cinit     0    00001a18    0000000a     
+                  00001a18    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001a1c    00000002     (__TI_handler_table)
+                  00001a1e    00000004     (__TI_cinit_table)
 
 USART0RX   0    0000fff2    00000002     
                   0000fff2    00000002     main.obj (.int09)
@@ -111,13 +113,13 @@ USART0RX   0    0000fff2    00000002
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 000018a0 records: 1, size/record: 4, table size: 4
-	.bss: load addr=0000189a, load size=00000004 bytes, run addr=00000200, run size=0000003e bytes, compression=zero_init
+__TI_cinit_table @ 00001a1e records: 1, size/record: 4, table size: 4
+	.bss: load addr=00001a18, load size=00000004 bytes, run addr=00000200, run size=0000003e bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 0000189e records: 1, size/record: 2, table size: 2
+__TI_handler_table @ 00001a1c records: 1, size/record: 2, table size: 2
 	index: 0, handler: __TI_zero_init
 
 
@@ -162,10 +164,10 @@ address    name
 0000014e   ADC12MEM7
 00000150   ADC12MEM8
 00000152   ADC12MEM9
-0000170e   ADC_ini
+00001882   ADC_ini
 00000057   BCSCTL1
 00000058   BCSCTL2
-000017f6   C$$EXIT
+00001974   C$$EXIT
 00000059   CACTL1
 0000005a   CACTL2
 0000005b   CAPD
@@ -173,9 +175,10 @@ address    name
 000001c8   DAC12_0DAT
 000001c2   DAC12_1CTL
 000001ca   DAC12_1DAT
-000017c8   DAC_ini
-0000181c   DALLAS_PRESENT_Message
+00001962   DAC_ini
+0000199a   DALLAS_PRESENT_Message
 00000056   DCOCTL
+000019ac   DISPLAY_RS232_Message
 000001e0   DMA0CTL
 000001e4   DMA0DA
 000001e2   DMA0SA
@@ -190,14 +193,15 @@ address    name
 000001f6   DMA2SZ
 00000122   DMACTL0
 00000124   DMACTL1
-0000182e   DYSPLAY_RS232_Message
-00001840   ERASE_ERR_Message
-00001852   ERASE_SUCCESS_Message
-00001490   Erase_Flash
+000018bc   Delay
+00001860   Delayx100us
+000019be   ERASE_ERR_Message
+000019d0   ERASE_SUCCESS_Message
+000015e4   Erase_Flash
 00000128   FCTL1
 0000012a   FCTL2
 0000012c   FCTL3
-0000172c   Get_ADC
+00001816   Get_ADC
 00000072   I2CDCTL
 00000076   I2CDRB
 00000076   I2CDRW
@@ -215,10 +219,10 @@ address    name
 00000001   IE2
 00000002   IFG1
 00000003   IFG2
-0000174a   Inactive_Flash
-000015f0   InitLCD
-000016aa   InitUSART0
-000017fa   LCD_Message
+000018a0   Inactive_Flash
+0000156e   InitLCD
+000017b2   InitUSART0
+00001978   LCD_Message
 00000134   MAC
 00000136   MACS
 00000004   ME1
@@ -256,17 +260,17 @@ address    name
 00000034   P6IN
 00000035   P6OUT
 00000037   P6SEL
-00001864   PGM_ERROR_Message
-00001876   PGM_SUCCESS_Message
-00001416   Programm_Bytes
+000019e2   PGM_ERROR_Message
+000019f4   PGM_SUCCESS_Message
+00001444   Programm_Bytes
 00000224   READ_BUF
 0000013c   RESHI
 0000013a   RESLO
-0000154e   Read_Bytes
-00001794   Read_Data
-00001888   SAVE_RS232_Message
-0000162e   SEND_CHAR
-0000166c   SEND_CMD
+000014ee   Read_Bytes
+000018d6   Read_Data
+00001a06   SAVE_RS232_Message
+000016b4   SEND_CHAR
+0000170e   SEND_CMD
 0000013e   SUMEXT
 00000055   SVSCTL
 00000172   TACCR0
@@ -311,54 +315,54 @@ address    name
 0000007e   U1RXBUF
 00000079   U1TCTL
 0000007f   U1TXBUF
-000017d6   UART_transmit
+000018f0   UART_transmit
 00000120   WDTCTL
 0000020a   WRITE_BUF
-000017a6   Write_Data
-000017e4   _E
+0000190a   Write_Data
+0000183c   _E
 00000a00   __STACK_END
 00000050   __STACK_SIZE
-000018a0   __TI_CINIT_Base
-000018a4   __TI_CINIT_Limit
-0000189e   __TI_Handler_Table_Base
-000018a0   __TI_Handler_Table_Limit
+00001a1e   __TI_CINIT_Base
+00001a22   __TI_CINIT_Limit
+00001a1c   __TI_Handler_Table_Base
+00001a1e   __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
 00000001   __TI_args_main
 00000001   __TI_exit
-00001780   __TI_zero_init
+0000193e   __TI_zero_init
 ffffffff   __binit__
 ffffffff   __c_args__
-000017c4   __mspabi_func_epilog_1
-000017c2   __mspabi_func_epilog_2
-000017c0   __mspabi_func_epilog_3
-000017be   __mspabi_func_epilog_4
-000017bc   __mspabi_func_epilog_5
-000017ba   __mspabi_func_epilog_6
-000017b8   __mspabi_func_epilog_7
-000016e2   __mspabi_slli
-0000170a   __mspabi_slli_1
-000016f8   __mspabi_slli_10
-000016f6   __mspabi_slli_11
-000016f4   __mspabi_slli_12
-000016f2   __mspabi_slli_13
-000016f0   __mspabi_slli_14
-000016ee   __mspabi_slli_15
-00001708   __mspabi_slli_2
-00001706   __mspabi_slli_3
-00001704   __mspabi_slli_4
-00001702   __mspabi_slli_5
-00001700   __mspabi_slli_6
-000016fe   __mspabi_slli_7
-000016fc   __mspabi_slli_8
-000016fa   __mspabi_slli_9
-000014f0   _auto_init
-00001766   _c_int00
-00001766   _c_int00_noexit
+0000195e   __mspabi_func_epilog_1
+0000195c   __mspabi_func_epilog_2
+0000195a   __mspabi_func_epilog_3
+00001958   __mspabi_func_epilog_4
+00001956   __mspabi_func_epilog_5
+00001954   __mspabi_func_epilog_6
+00001952   __mspabi_func_epilog_7
+000017ea   __mspabi_slli
+00001812   __mspabi_slli_1
+00001800   __mspabi_slli_10
+000017fe   __mspabi_slli_11
+000017fc   __mspabi_slli_12
+000017fa   __mspabi_slli_13
+000017f8   __mspabi_slli_14
+000017f6   __mspabi_slli_15
+00001810   __mspabi_slli_2
+0000180e   __mspabi_slli_3
+0000180c   __mspabi_slli_4
+0000180a   __mspabi_slli_5
+00001808   __mspabi_slli_6
+00001806   __mspabi_slli_7
+00001804   __mspabi_slli_8
+00001802   __mspabi_slli_9
+00001656   _auto_init
+00001924   _c_int00
+00001924   _c_int00_noexit
 0000fffe   _reset_vector
 000009b0   _stack
-000017f2   _system_pre_init
-000017f6   abort
+00001970   _system_pre_init
+00001974   abort
 00000205   b1_flag
 00000206   b2_flag
 00000207   b3_flag
@@ -370,7 +374,7 @@ ffffffff   binit
 00000201   proba
 00000202   temp
 00000203   test
-000015a6   usart0_rx
+00001768   usart0_rx
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -559,64 +563,66 @@ address    name
 000009b0   _stack
 00000a00   __STACK_END
 00001100   main
-00001416   Programm_Bytes
-00001490   Erase_Flash
-000014f0   _auto_init
-0000154e   Read_Bytes
-000015a6   usart0_rx
-000015f0   InitLCD
-0000162e   SEND_CHAR
-0000166c   SEND_CMD
-000016aa   InitUSART0
-000016e2   __mspabi_slli
-000016ee   __mspabi_slli_15
-000016f0   __mspabi_slli_14
-000016f2   __mspabi_slli_13
-000016f4   __mspabi_slli_12
-000016f6   __mspabi_slli_11
-000016f8   __mspabi_slli_10
-000016fa   __mspabi_slli_9
-000016fc   __mspabi_slli_8
-000016fe   __mspabi_slli_7
-00001700   __mspabi_slli_6
-00001702   __mspabi_slli_5
-00001704   __mspabi_slli_4
-00001706   __mspabi_slli_3
-00001708   __mspabi_slli_2
-0000170a   __mspabi_slli_1
-0000170e   ADC_ini
-0000172c   Get_ADC
-0000174a   Inactive_Flash
-00001766   _c_int00
-00001766   _c_int00_noexit
-00001780   __TI_zero_init
-00001794   Read_Data
-000017a6   Write_Data
-000017b8   __mspabi_func_epilog_7
-000017ba   __mspabi_func_epilog_6
-000017bc   __mspabi_func_epilog_5
-000017be   __mspabi_func_epilog_4
-000017c0   __mspabi_func_epilog_3
-000017c2   __mspabi_func_epilog_2
-000017c4   __mspabi_func_epilog_1
-000017c8   DAC_ini
-000017d6   UART_transmit
-000017e4   _E
-000017f2   _system_pre_init
-000017f6   C$$EXIT
-000017f6   abort
-000017fa   LCD_Message
-0000181c   DALLAS_PRESENT_Message
-0000182e   DYSPLAY_RS232_Message
-00001840   ERASE_ERR_Message
-00001852   ERASE_SUCCESS_Message
-00001864   PGM_ERROR_Message
-00001876   PGM_SUCCESS_Message
-00001888   SAVE_RS232_Message
-0000189e   __TI_Handler_Table_Base
-000018a0   __TI_CINIT_Base
-000018a0   __TI_Handler_Table_Limit
-000018a4   __TI_CINIT_Limit
+00001444   Programm_Bytes
+000014ee   Read_Bytes
+0000156e   InitLCD
+000015e4   Erase_Flash
+00001656   _auto_init
+000016b4   SEND_CHAR
+0000170e   SEND_CMD
+00001768   usart0_rx
+000017b2   InitUSART0
+000017ea   __mspabi_slli
+000017f6   __mspabi_slli_15
+000017f8   __mspabi_slli_14
+000017fa   __mspabi_slli_13
+000017fc   __mspabi_slli_12
+000017fe   __mspabi_slli_11
+00001800   __mspabi_slli_10
+00001802   __mspabi_slli_9
+00001804   __mspabi_slli_8
+00001806   __mspabi_slli_7
+00001808   __mspabi_slli_6
+0000180a   __mspabi_slli_5
+0000180c   __mspabi_slli_4
+0000180e   __mspabi_slli_3
+00001810   __mspabi_slli_2
+00001812   __mspabi_slli_1
+00001816   Get_ADC
+0000183c   _E
+00001860   Delayx100us
+00001882   ADC_ini
+000018a0   Inactive_Flash
+000018bc   Delay
+000018d6   Read_Data
+000018f0   UART_transmit
+0000190a   Write_Data
+00001924   _c_int00
+00001924   _c_int00_noexit
+0000193e   __TI_zero_init
+00001952   __mspabi_func_epilog_7
+00001954   __mspabi_func_epilog_6
+00001956   __mspabi_func_epilog_5
+00001958   __mspabi_func_epilog_4
+0000195a   __mspabi_func_epilog_3
+0000195c   __mspabi_func_epilog_2
+0000195e   __mspabi_func_epilog_1
+00001962   DAC_ini
+00001970   _system_pre_init
+00001974   C$$EXIT
+00001974   abort
+00001978   LCD_Message
+0000199a   DALLAS_PRESENT_Message
+000019ac   DISPLAY_RS232_Message
+000019be   ERASE_ERR_Message
+000019d0   ERASE_SUCCESS_Message
+000019e2   PGM_ERROR_Message
+000019f4   PGM_SUCCESS_Message
+00001a06   SAVE_RS232_Message
+00001a1c   __TI_Handler_Table_Base
+00001a1e   __TI_CINIT_Base
+00001a1e   __TI_Handler_Table_Limit
+00001a22   __TI_CINIT_Limit
 0000fffe   _reset_vector
 ffffffff   __binit__
 ffffffff   __c_args__
@@ -624,4 +630,4 @@ ffffffff   binit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
 
-[246 symbols]
+[248 symbols]
